@@ -15,8 +15,15 @@ class VelocityNavigationCommand(private val proxy: ProxyServer, private val targ
             return
         }
 
-        val player: Player = inv.source() as Player
-        proxy.getServer(target).ifPresent { s -> player.createConnectionRequest(s).connect() }
+        val player: Player = inv.source() as Player;
+        proxy.getServer(target).ifPresent{ s ->
+            run {
+                val status = player.createConnectionRequest(s).connect().get()
+                if (!status.isSuccessful) {
+                    inv.source().sendMessage(status.getReasonComponent().get())
+                }
+            }
+        }
     }
 
     override fun hasPermission(invocation: SimpleCommand.Invocation): Boolean {
