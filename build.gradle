@@ -6,7 +6,7 @@ plugins {
 }
 
 group 'lv.mtm123'
-version '1.2.1-SNAPSHOT'
+version '1.2.2-SNAPSHOT'
 
 apply plugin: "com.github.johnrengelman.shadow"
 
@@ -49,13 +49,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.21'
-    compileOnly 'com.velocitypowered:velocity-api:3.0.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21'
+    compileOnly 'com.velocitypowered:velocity-api:3.3.0-SNAPSHOT'
     compileOnly 'net.md-5:bungeecord-api:1.16-R0.4'
     implementation 'org.spongepowered:configurate-yaml:4.1.1'
     implementation 'org.bstats:bstats-bungeecord:2.2.1'
     implementation 'org.bstats:bstats-velocity:2.2.1'
-    kapt 'com.velocitypowered:velocity-api:1.0.0-SNAPSHOT'
+    kapt 'com.velocitypowered:velocity-api:3.3.0-SNAPSHOT'
 }
 
 compileKotlin {
